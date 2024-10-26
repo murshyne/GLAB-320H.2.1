@@ -1,7 +1,7 @@
 import App from "../../App";
 
-function Content() {
-  return <p>This is my first React Application, wish me luck!, "You dont need LUCK, you got this !!!"</p>;
+function Content(props) {
+  return (<p style={{color: props.color}}>{props.text}</p>);
 
 }
 
