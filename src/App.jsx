@@ -6,19 +6,30 @@ import Footer from './components/Footer/Footer'
 import Button from './components/Button/Button';
 
 
-
-
-
 function App() {
-  const [count, setCount] = useState(0)
+  const [message, setMessage] = useState("Wish me luck...🙁");
+  const [contentText, setContentText] = useState("I think I've got it!");
+
+  const toggleMessage1 = () => {
+    setMessage((prevMessage) =>
+      prevMessage === "Wish me luck...🙁"
+        ? "I don't need luck...😁"
+        : "Wish me luck...🙁"
+    );
+     setContentText((prevMessage) =>
+       prevMessage === "I think I've got it!"
+         ? "I got this, HECKING YEAH!!! 🤟"
+         : "I think I've got it!"
+     ); 
+  };
 
   return (
     <>
       <Header />
-      <Button />
       <Content color="yellow" text="This is my first React Application!" />
-      <Content color="red" text="Wish me luck..." />
-      <Content color="green" text="I think I've got it!" />
+      <Button onClick={toggleMessage1} />
+      <Content color="red" text={message} />
+      <Content color="green" text={contentText} />
       <Footer />
     </>
   );
